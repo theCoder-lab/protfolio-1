@@ -103,13 +103,14 @@ p#hide-menu {
 }
 
 .hidden-menu > div {
-  position: sticky;
-  top: 100px;
+  position: fixed;
+  top: 50px;
+  left: 50px;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
 }
 
@@ -142,6 +143,7 @@ p#hide-menu {
 
 header {
   background-color: var(--mainBlack);
+  width: 100%;
   height: 60px;
   line-height: 50px;
   padding: 0 50px;
@@ -228,7 +230,7 @@ nav > a:hover {
 }
 
 .hero:hover .folio {
-  height: 710px;
+  height: 620px;
 }
 
 .hero:hover .text {
@@ -259,25 +261,11 @@ nav > a:hover {
   line-height: 22px;
 }
 
-/* .skew-line{
-  position: absolute;
-  top: -2px;
-  right: 35%;
-  display: block;
-  width: 194px;
-  height: 400px;
-  background-color: var(--mainBlack);
-  transform: skewX(25deg);
-  z-index: 100;
-}
- */
-
 /* ABOUT SECTION */
 
 .about {
   width: 100%;
-  height: 300px;
-  padding: 0 50px;
+  padding: 50px;
   margin-bottom: 20px;
   background-color: var(--mainSectionBlack);
   display: flex;
@@ -471,19 +459,19 @@ nav > a:hover {
 }
 
 .socials {
-  width: 30%;
+  width: 40%;
 }
 
 .info {
   width: 100%;
-  height: 210px;
+  height: 300px;
   position: relative;
   overflow: hidden;
 }
 
 .info > img {
   width: 100%;
-  height: 230px;
+  height: 300px;
   position: absolute;
   filter: grayscale(1);
   top: 0;
@@ -555,6 +543,18 @@ nav > a:hover {
   color: var(--mainDark-1);
 }
 
+.form > form > textarea{
+  border: none;
+  width: 100%;
+  height: 70px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.form > form > textarea::placeholder {
+  color: var(--mainDark-1);
+}
+
 .form > form > button {
   border: none;
   background-color: var(--mainDarkPink);
@@ -592,11 +592,77 @@ footer > h5 {
 }
 
 /* MEDIA QUERYS START */
+@media only screen and (min-width: 250px) and (max-width: 450px){
+
+  header{
+    padding: 0 5px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+
+  .hero {
+    padding: 0;
+  }
+
+  .hero:hover .folio {
+    height: 370px;
+  }
+
+  .img > img {
+    height: 350px;
+  }
+
+  .socials{
+    width: 48%;
+  }
+
+  .form{
+    width: 50%;
+  }
+
+  .form > form > button {
+    width: 100%;
+  }
+
+  .goUp{
+    right: 6px;
+  }
+
+  p#hide-menu {
+    right: 6px;
+  }
+
+  .hidden-menu > div{
+    left: 6px;
+  }
+
+  .contact{
+    flex-direction: column;
+  }
+
+  .socials{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .form{
+    width: 100%;
+    padding-left: 0;
+  }
+}
 /* 600 MEDIA QUERY */
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 451px) and (max-width: 600px) {
+  
   .main-wrapper {
     width: 580px;
     margin: 0 auto;
+  }
+
+  header{
+    padding: 0 5px;
   }
 
   .nav-links {
@@ -615,8 +681,16 @@ footer > h5 {
     height: 400px;
   }
 
+  .socials{
+    width: 45%;
+  }
+
+  .form{
+    width: 45%;
+  }
+
   .form > form > button {
-    width: 172px;
+    width: 100%;
   }
 
   .img-wrapper {
@@ -625,7 +699,7 @@ footer > h5 {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 600px) and (max-width: 768px) {
+@media only screen and (min-width: 601px) and (max-width: 768px) {
   .main-wrapper {
     width: 700px;
     margin: 0 auto;
@@ -633,5 +707,29 @@ footer > h5 {
 
   .nav-links {
     display: none;
+  }
+
+  .img > img {
+    height: 400px;
+  }
+
+  .hero{
+    padding: 0;
+  }
+
+  .hero:hover .folio {
+    height: 405px;
+  }
+
+  .form > form > button {
+    width: 100%;
+  }
+
+  .socials{
+    width: 45%;
+  }
+
+  .form{
+    width: 45%;
   }
 }
